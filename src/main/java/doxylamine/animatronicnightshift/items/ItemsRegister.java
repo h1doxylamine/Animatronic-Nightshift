@@ -43,6 +43,19 @@ public class ItemsRegister {
         public static final RegistryObject<SpawnEggItem> TOY_FREDDY_SPAWN_EGG = ITEMS.register("toy_freddy_spawn_egg",
                 () -> new ForgeSpawnEggItem(EntitiesRegister.TOY_FREDDY, 0xB94B27, 0xCF2323, new Item.Properties()));
 
+        public static final RegistryObject<SpawnEggItem> TOY_BONNIE_SPAWN_EGG = ITEMS.register("toy_bonnie_spawn_egg",
+                () -> new ForgeSpawnEggItem(EntitiesRegister.TOY_BONNIE, 0xB94B27, 0xCF2323, new Item.Properties()));
+
+        public static final RegistryObject<SpawnEggItem> WITHERED_FREDDY_SPAWN_EGG = ITEMS.register("withered_freddy_spawn_egg",
+                () -> new ForgeSpawnEggItem(EntitiesRegister.WITHERED_FREDDY, 0xB94B27, 0xCF2323, new Item.Properties()));
+
+        public static final RegistryObject<SpawnEggItem> WITHERED_BONNIE_SPAWN_EGG = ITEMS.register("withered_bonnie_spawn_egg",
+                () -> new ForgeSpawnEggItem(EntitiesRegister.WITHERED_BONNIE, 0xB94B27, 0xCF2323, new Item.Properties()));
+
+        public static final RegistryObject<SpawnEggItem> SPRINGTRAP_SPAWN_EGG = ITEMS.register("springtrap_spawn_egg",
+                () -> new ForgeSpawnEggItem(EntitiesRegister.SPRINGTRAP, 0xB94B27, 0xCF2323, new Item.Properties()));
+
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
