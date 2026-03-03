@@ -37,7 +37,7 @@ public class ItemFreddyMask extends Item {
             FreddyMaskRenderer.showOverlay = true;
         }
 
-        Minecraft.getInstance().getSoundManager().play(
+       Minecraft.getInstance().getSoundManager().play(
                 SimpleSoundInstance.forUI(
                         MASK_PUT,
                         1.0F,
