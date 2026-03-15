@@ -1,5 +1,6 @@
 package doxylamine.animatronicnightshift.event;
 
+import doxylamine.animatronicnightshift.entities.WitheredFreddy.WitheredFreddy;
 import doxylamine.animatronicnightshift.utils.SoundsRegister;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import org.joml.Quaternionf;
@@ -143,6 +144,11 @@ public class JumpscareOverlay {
 
     public static void drawEntityOnScreen(GuiGraphics gfx, int x, int y, int scale,
                                           LivingEntity fake, LivingEntity original, float partialTick) {
+
+        if (fake instanceof WitheredFreddy) {
+            y +=50;
+        }
+
         PoseStack pose = gfx.pose();
         pose.pushPose();
         pose.translate(x, y, 105.0D);

@@ -3,6 +3,7 @@ package doxylamine.animatronicnightshift.entities.WitheredFreddy;// Made with Bl
 // Paste this class into your mod and generate all required imports
 
 
+import doxylamine.animatronicnightshift.entities.Foxy.Foxy;
 import doxylamine.animatronicnightshift.entities.FreddyFazbear.FreddyFazbearAnimation;
 import doxylamine.animatronicnightshift.entities.ToyFreddy.ToyFreddy;
 import net.minecraft.client.model.EntityModel;
@@ -217,7 +218,9 @@ public class ModelWitheredFreddy<T extends WitheredFreddy> extends HierarchicalM
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.root().getAllParts().forEach(ModelPart::resetPose);
         this.animate(((WitheredFreddy) entity).crawlingAnimationState, FreddyFazbearAnimation.crawl, ageInTicks, 1f);
-        this.animate(((WitheredFreddy) entity).idleAnimationState, ModelWitheredFreddyAnimations.lying, ageInTicks, 1f);
+        this.animate(((WitheredFreddy) entity).idleAnimationState, WitheredFreddyAnimations.lying, ageInTicks, 1f);
+        this.animate(((WitheredFreddy) entity).jumpscareAnimationState, WitheredFreddyAnimations.jumpscare, ageInTicks, 1f);
+
 
 
         this.applyHeadRotation(netHeadYaw, headPitch, ageInTicks);

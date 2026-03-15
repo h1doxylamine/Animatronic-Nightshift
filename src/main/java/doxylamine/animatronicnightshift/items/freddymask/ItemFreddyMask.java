@@ -79,6 +79,7 @@ public class ItemFreddyMask extends Item {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
         tooltip.add(Component.literal("§7Right-click to put on the mask"));
+        tooltip.add(Component.literal("§4Can rarely cause a crash"));
         super.appendHoverText(stack, world, tooltip, flag);
     }
 

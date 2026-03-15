@@ -3,6 +3,7 @@ package doxylamine.animatronicnightshift.entities.Foxy;// Made with Blockbench 5
 // Paste this class into your mod and generate all required imports
 
 
+import doxylamine.animatronicnightshift.entities.Bonnie.Bonnie;
 import doxylamine.animatronicnightshift.entities.FreddyFazbear.FreddyFazbearAnimation;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -195,6 +196,8 @@ public class ModelFoxy<T extends Foxy> extends HierarchicalModel<T> {
         this.root().getAllParts().forEach(ModelPart::resetPose);
         this.animate(((Foxy) entity).idleAnimationState, FoxyAnimations.day, ageInTicks, 1f);
         this.animate(((Foxy) entity).crawlingAnimationState, FreddyFazbearAnimation.crawl, ageInTicks, 1f);
+        this.animate(((Foxy) entity).jumpscareAnimationState, FreddyFazbearAnimation.jumpscare, ageInTicks, 1f);
+
 
         this.applyHeadRotation(netHeadYaw, headPitch, ageInTicks);
 

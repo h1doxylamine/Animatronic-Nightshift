@@ -10,7 +10,7 @@ import net.minecraft.client.animation.KeyframeAnimations;
  * Exported for Minecraft version 1.19 or later with Mojang mappings
  * @author Author
  */
-public class ModelWitheredChicaAnimations {
+public class WitheredChicaAnimations {
 	public static final AnimationDefinition lying = AnimationDefinition.Builder.withLength(0.0F).looping()
 		.addAnimation("bone7", new AnimationChannel(AnimationChannel.Targets.ROTATION,
 			new Keyframe(0.0F, KeyframeAnimations.degreeVec(-90.0F, 0.0F, 0.0F), AnimationChannel.Interpolations.LINEAR)

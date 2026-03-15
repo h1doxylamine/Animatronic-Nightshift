@@ -4,7 +4,6 @@ package doxylamine.animatronicnightshift.entities.WitheredChica;// Made with Blo
 
 
 import doxylamine.animatronicnightshift.entities.FreddyFazbear.FreddyFazbearAnimation;
-import doxylamine.animatronicnightshift.entities.WitheredFreddy.ModelWitheredFreddyAnimations;
 import doxylamine.animatronicnightshift.entities.WitheredFreddy.WitheredFreddy;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -230,7 +229,7 @@ public class ModelWitheredChica<T extends WitheredChica> extends HierarchicalMod
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.root().getAllParts().forEach(ModelPart::resetPose);
         this.animate(((WitheredChica) entity).crawlingAnimationState, FreddyFazbearAnimation.crawl, ageInTicks, 1f);
-        this.animate(((WitheredChica) entity).idleAnimationState, ModelWitheredChicaAnimations.lying, ageInTicks, 1f);
+        this.animate(((WitheredChica) entity).idleAnimationState, WitheredChicaAnimations.lying, ageInTicks, 1f);
 
 
         this.applyHeadRotation(netHeadYaw, headPitch, ageInTicks);
