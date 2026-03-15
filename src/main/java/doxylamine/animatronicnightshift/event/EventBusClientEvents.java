@@ -12,6 +12,7 @@ import doxylamine.animatronicnightshift.entities.Springtrap.ModelSpringtrap;
 import doxylamine.animatronicnightshift.entities.ToyBonnie.ModelToyBonnie;
 import doxylamine.animatronicnightshift.entities.ToyFreddy.ModelToyFreddy;
 import doxylamine.animatronicnightshift.entities.WitheredBonnie.ModelWitheredBonnie;
+import doxylamine.animatronicnightshift.entities.WitheredChica.ModelWitheredChica;
 import doxylamine.animatronicnightshift.entities.WitheredFreddy.ModelWitheredFreddy;
 import doxylamine.animatronicnightshift.items.freddymask.ModelFreddyMask;
 import net.minecraftforge.api.distmarker.Dist;
@@ -35,6 +36,7 @@ public class EventBusClientEvents {
         event.registerLayerDefinition(LayersRegister.TOY_BONNIE_LAYER, ModelToyBonnie::createBodyLayer);
         event.registerLayerDefinition(LayersRegister.WITHERED_FREDDY_LAYER, ModelWitheredFreddy::createBodyLayer);
         event.registerLayerDefinition(LayersRegister.WITHERED_BONNIE_LAYER, ModelWitheredBonnie::createBodyLayer);
+        event.registerLayerDefinition(LayersRegister.WITHERED_CHICA_LAYER, ModelWitheredChica::createBodyLayer);
         event.registerLayerDefinition(LayersRegister.SPRINGTRAP_LAYER, ModelSpringtrap::createBodyLayer);
 
 

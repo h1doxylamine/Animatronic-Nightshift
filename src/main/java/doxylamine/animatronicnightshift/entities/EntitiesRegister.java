@@ -10,6 +10,7 @@ import doxylamine.animatronicnightshift.entities.Springtrap.Springtrap;
 import doxylamine.animatronicnightshift.entities.ToyBonnie.ToyBonnie;
 import doxylamine.animatronicnightshift.entities.ToyFreddy.ToyFreddy;
 import doxylamine.animatronicnightshift.entities.WitheredBonnie.WitheredBonnie;
+import doxylamine.animatronicnightshift.entities.WitheredChica.WitheredChica;
 import doxylamine.animatronicnightshift.entities.WitheredFreddy.WitheredFreddy;
 import doxylamine.animatronicnightshift.entities.WitheredFreddy.WitheredFreddyRenderer;
 import net.minecraft.world.entity.EntityType;
@@ -75,6 +76,11 @@ public class EntitiesRegister {
             ENTITY_TYPES.register("withered_bonnie", () -> EntityType.Builder.of(WitheredBonnie::new, MobCategory.MONSTER)
                     .sized(0.8f, 2.8f)
                     .build("withered_bonnie"));
+
+    public static final RegistryObject<EntityType<WitheredChica>> WITHERED_CHICA =
+            ENTITY_TYPES.register("withered_chica", () -> EntityType.Builder.of(WitheredChica::new, MobCategory.MONSTER)
+                    .sized(0.8f, 2.8f)
+                    .build("withered_chica"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

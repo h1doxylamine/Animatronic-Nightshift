@@ -37,9 +37,13 @@ public class LayersRegister {
     public static final ModelLayerLocation WITHERED_BONNIE_LAYER =
             new ModelLayerLocation(new ResourceLocation(AnimatronicNightshift.MODID, "withered_bonnie"), "main");
 
+    public static final ModelLayerLocation WITHERED_CHICA_LAYER =
+            new ModelLayerLocation(new ResourceLocation(AnimatronicNightshift.MODID, "withered_chica"), "main");
+
     public static final ModelLayerLocation CAMERA_LAYER =
             new ModelLayerLocation(new ResourceLocation(AnimatronicNightshift.MODID, "camera"), "main");
 
     public static final ModelLayerLocation FREDDY_MASK_LAYER =
             new ModelLayerLocation(new ResourceLocation(AnimatronicNightshift.MODID, "freddy_mask"), "main");
+
 }

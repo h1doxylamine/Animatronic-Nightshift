@@ -11,6 +11,7 @@ import doxylamine.animatronicnightshift.entities.Springtrap.Springtrap;
 import doxylamine.animatronicnightshift.entities.ToyBonnie.ToyBonnie;
 import doxylamine.animatronicnightshift.entities.ToyFreddy.ToyFreddy;
 import doxylamine.animatronicnightshift.entities.WitheredBonnie.WitheredBonnie;
+import doxylamine.animatronicnightshift.entities.WitheredChica.WitheredChica;
 import doxylamine.animatronicnightshift.entities.WitheredFreddy.WitheredFreddy;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -30,6 +31,8 @@ public class EventBusEvents {
         event.put(EntitiesRegister.TOY_BONNIE.get(), ToyBonnie.createAttributes().build());;
         event.put(EntitiesRegister.WITHERED_FREDDY.get(), WitheredFreddy.createAttributes().build());;
         event.put(EntitiesRegister.WITHERED_BONNIE.get(), WitheredBonnie.createAttributes().build());;
+        event.put(EntitiesRegister.WITHERED_CHICA.get(), WitheredChica.createAttributes().build());;
+
 
 
     }

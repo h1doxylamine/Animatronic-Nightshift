@@ -10,6 +10,7 @@ import net.minecraft.client.animation.KeyframeAnimations;
  * Exported for Minecraft version 1.19 or later with Mojang mappings
  * @author Author
  */
+
 public class ModelWitheredFreddyAnimations {
 	public static final AnimationDefinition lying = AnimationDefinition.Builder.withLength(0.0F).looping()
 		.addAnimation("bone7", new AnimationChannel(AnimationChannel.Targets.ROTATION,
