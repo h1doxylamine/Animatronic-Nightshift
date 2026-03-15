@@ -1,11 +1,21 @@
-// Made with Blockbench 5.0.7
+package doxylamine.animatronicnightshift.entities.WitheredChica;// Made with Blockbench 5.0.7
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
 
-public class WitheredChica<T extends Entity> extends EntityModel<T> {
+import doxylamine.animatronicnightshift.entities.FreddyFazbear.FreddyFazbearAnimation;
+import doxylamine.animatronicnightshift.entities.WitheredFreddy.ModelWitheredFreddyAnimations;
+import doxylamine.animatronicnightshift.entities.WitheredFreddy.WitheredFreddy;
+import net.minecraft.client.model.HierarchicalModel;
+import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.client.model.geom.PartPose;
+import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
+
+public class ModelWitheredChica<T extends WitheredChica> extends HierarchicalModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("modid", "witheredchica"), "main");
 	private final ModelPart bone7;
 	private final ModelPart corps;
 	private final ModelPart brasdroit;
@@ -28,7 +38,7 @@ public class WitheredChica<T extends Entity> extends EntityModel<T> {
 	private final ModelPart bone3;
 	private final ModelPart bone9;
 
-	public WitheredChica(ModelPart root) {
+	public ModelWitheredChica(ModelPart root) {
 		this.bone7 = root.getChild("bone7");
 		this.corps = this.bone7.getChild("corps");
 		this.brasdroit = this.corps.getChild("brasdroit");
@@ -211,13 +221,41 @@ public class WitheredChica<T extends Entity> extends EntityModel<T> {
 		return LayerDefinition.create(meshdefinition, 128, 128);
 	}
 
-	@Override
-	public void setupAnim(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    @Override
+    public ModelPart root() {
+        return bone7;
+    }
 
-	}
+    @Override
+    public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        this.root().getAllParts().forEach(ModelPart::resetPose);
+        this.animate(((WitheredChica) entity).crawlingAnimationState, FreddyFazbearAnimation.crawl, ageInTicks, 1f);
+        this.animate(((WitheredChica) entity).idleAnimationState, ModelWitheredChicaAnimations.lying, ageInTicks, 1f);
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-		bone7.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-	}
+
+        this.applyHeadRotation(netHeadYaw, headPitch, ageInTicks);
+
+        this.jambedroite.xRot += Mth.cos(limbSwing * 0.3F) * 0.8F * limbSwingAmount * 0.5F;
+        this.jambegauche.xRot += Mth.cos(limbSwing * 0.3F + (float)Math.PI) * 0.8F * limbSwingAmount * 0.5F;
+        this.jambedroite.yRot += 0.0F;
+        this.jambegauche.yRot += 0.0F;
+
+        this.brasgauche.xRot += Mth.cos(limbSwing * 0.3F) * 0.8F * limbSwingAmount * 0.5F;
+        this.brasdroit.xRot += Mth.cos(limbSwing * 0.3F + (float)Math.PI) * 0.8F * limbSwingAmount * 0.5F;
+        this.brasgauche.yRot += 0.0F;
+        this.brasdroit.yRot += 0.0F;
+
+    }
+
+    private void applyHeadRotation(float pNetHeadYaw, float pHeadPitch, float pAgeInTicks) {
+
+        float yawClamped = Mth.clamp(pNetHeadYaw, -30.0F, 30.0F);
+        float pitchClamped = Mth.clamp(pHeadPitch, -25.0F, 45.0F);
+
+        float yawRad = yawClamped * ((float)Math.PI / 180F);
+        float pitchRad = pitchClamped * ((float)Math.PI / 180F);
+
+        this.tete.yRot += yawRad;
+        this.tete.xRot += pitchRad;
+    }
 }
