@@ -4,9 +4,6 @@ package doxylamine.animatronicnightshift.entities.WitheredBonnie;// Made with Bl
 
 
 import doxylamine.animatronicnightshift.entities.FreddyFazbear.FreddyFazbearAnimation;
-import doxylamine.animatronicnightshift.entities.   WitheredBonnie.WitheredBonnie;
-import doxylamine.animatronicnightshift.entities.WitheredFreddy.ModelWitheredFreddyAnimations;
-import doxylamine.animatronicnightshift.entities.WitheredFreddy.WitheredFreddy;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;

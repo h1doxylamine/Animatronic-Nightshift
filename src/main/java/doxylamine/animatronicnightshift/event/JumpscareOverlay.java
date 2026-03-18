@@ -142,18 +142,26 @@ public class JumpscareOverlay {
         return f;
     }
 
-    public static void drawEntityOnScreen(GuiGraphics gfx, int x, int y, int scale,
+    public static void drawEntityOnScreen(GuiGraphics gfx, int x, int y, float scale,
                                           LivingEntity fake, LivingEntity original, float partialTick) {
 
-        if (fake instanceof WitheredFreddy) {
-            y +=50;
-        }
 
         PoseStack pose = gfx.pose();
         pose.pushPose();
+
+
+        if (fake instanceof WitheredFreddy) {
+            y += 190;
+            scale *= 1.1f;
+            pose.mulPose(new Quaternionf().rotateZ(50f));
+        }
+
         pose.translate(x, y, 105.0D);
         pose.scale(scale, scale, scale);
         pose.mulPose(new Quaternionf().rotateZ((float)Math.PI));
+
+        //je fais de mon mieux pour qu'il soit de face mdr
+        pose.mulPose(new Quaternionf().rotateY(50.32f));
 
         EntityRenderDispatcher dispatcher = Minecraft.getInstance().getEntityRenderDispatcher();
         dispatcher.setRenderShadow(false);
