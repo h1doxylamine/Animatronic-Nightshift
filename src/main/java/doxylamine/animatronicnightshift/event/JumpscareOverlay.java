@@ -156,7 +156,6 @@ public class JumpscareOverlay {
             pose.mulPose(new Quaternionf().rotateZ(50f));
         }
 
-
         pose.translate(x, y, 105.0D);
         pose.scale(scale, scale, scale);
         pose.mulPose(new Quaternionf().rotateZ((float)Math.PI));

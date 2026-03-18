@@ -207,7 +207,7 @@ public class AnimatronicAttackGoal extends Goal {
 
         double dotProduct = mobLook.dot(toTarget);
 
-        double angleThreshold = Math.cos(Math.toRadians(90));
+        double angleThreshold = Math.cos(Math.toRadians(110));
 
         return dotProduct >= angleThreshold;
     }
